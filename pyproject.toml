@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "data-extract"
+version = "0.1.0"
+description = ""
+authors = ["Rajesh <rajeshprofx7@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+streamlit = "^1.32.1"
+mysql-connector = "^2.2.9"
+pandas = "^2.2.1"
+psycopg2-binary = "^2.9.9"
+xlrd = "^2.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
