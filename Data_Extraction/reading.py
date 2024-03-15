@@ -2,7 +2,7 @@ import pandas as pd
 import json
 import mysql.connector
 import psycopg2
-
+import os
 
 
 def read_data_from_file(file_format, file_path):
@@ -16,7 +16,7 @@ def read_data_from_file(file_format, file_path):
     Returns:
         pd.DataFrame: A pandas DataFrame containing the data.
     """
-    supported_formats = ["csv", "excel", "parquet", "mysql", "postgres"]
+    supported_formats = ["csv", "excel", "parquet", "mysql", "postgres","json"]
 
     if file_format not in supported_formats:
         raise ValueError(f"Unsupported file format: {file_format}")
@@ -27,6 +27,8 @@ def read_data_from_file(file_format, file_path):
         df = read_from_excel_file(file_path)
     elif file_format == "parquet":
         df = read_from_parquet_file(file_path)
+    elif file_format == 'json':
+        df = read_from_json_file(file_path)
     elif file_format == "mysql":
         df = read_from_mysql_db(file_path)
     elif file_format == "postgres":
@@ -47,6 +49,8 @@ def read_data_from_file(file_format, file_path):
 #         df = read_from_postgres_db(input_path)
     
 #     return df
+
+
 
 
 def read_from_csv_file(input_path):
@@ -76,6 +80,52 @@ def read_from_csv_file(input_path):
     except IOError as e:
         print(f"Error: reading file '{input_path}' : {e}")
         return None
+    
+
+
+# def read_from_json_file(input_path):
+#     try:
+#         with open(input_path, 'r') as file:
+#             data = json.load(file)
+#         df = pd.DataFrame(data)
+#         return df
+#     except FileNotFoundError:
+#         print(f"Error: File '{input_path}' not found.")
+#         return None
+#     except IOError as e:
+#         print(f"Error: reading file '{input_path}' : {e}")
+#         return None
+    
+def read_from_json_file(input_path):
+    """
+    Read data from a JSON file and return a pandas DataFrame.
+
+    Parameters:
+    input_path (str): The path to the JSON file to be read.
+
+    Returns:
+    pd.DataFrame: A DataFrame containing the data read from the JSON file.
+
+    Raises:
+    FileNotFoundError: If the specified file does not exist.
+    IOError: If there is an error reading the file.
+    """
+
+    # Check if the file exists
+    if not os.path.exists(input_path):
+        raise FileNotFoundError(f"Error: File '{input_path}' not found.")
+
+    try:
+        # Read data from JSON file into DataFrame
+        df = pd.read_json(input_path,lines=True)
+        return df
+
+    except IOError as e:
+        raise IOError(f"Error: reading file '{input_path}': {e}")
+
+    except Exception as e:
+        raise e  # Raise any other unexpected exceptions
+    
     
 def read_from_excel_file(input_path):
 
