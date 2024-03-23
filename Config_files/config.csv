@@ -1,8 +1,6 @@
 input_path,file_format,file_name
-<<<<<<< HEAD
 /Data_Extraction/source_files/mock_data.csv,csv,mock_data
 /Data_Extraction/Data_files/,csv,
-=======
 /home/razz/Rajesh/data_extraction/source_files/test_data.csv,csv,persons
 /home/razz/Rajesh/data_extraction/source_files/file_example_XLS_10.xls,excel,orders
 /home/razz/Rajesh/data_extraction/source_files/MT cars.parquet,parquet,cars
@@ -10,4 +8,3 @@ input_path,file_format,file_name
 /home/razz/Rajesh/data_extraction/credentials/postgres.json,postgres,users_data
 /home/razz/Rajesh/data_extraction/source_files/mtcars.json,json,MTcars
 /home/razz/Rajesh/data_extraction/Data_files,csv,
->>>>>>> dc380f051b1aede505daddfd4a52e1622df61cd8
