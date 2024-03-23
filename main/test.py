@@ -1,26 +1,12 @@
-import mysql.connector
+from Data_Extraction import reading as rd
 
-# Connect to the database
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  password="Rajubay@123",
-  database="test"
-)
+input_path = "/home/razz/Rajesh/data_extraction/source_files/mtcars.json"
+input_path_par = "/home/razz/Rajesh/data_extraction/source_files/MT cars.parquet"
 
-# Create a cursor object
-mycursor = mydb.cursor()
 
-# Execute a SELECT query
-mycursor.execute("SELECT * FROM people")
 
-# Fetch all rows
-myresult = mycursor.fetchall()
+df = rd.read_from_json_file(input_path)
+df1 = rd.read_from_parquet_file(input_path_par)
 
-# Print the results
-for row in myresult:
-    print(row)
-
-# Close the cursor and connection
-mycursor.close()
-mydb.close()
+print(df.head())
+print(df1.head())

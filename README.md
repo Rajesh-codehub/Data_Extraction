@@ -2,10 +2,12 @@
 Extracting or ingecting data files from multiple sources and load into local repositary
 
 **pre-requesites**
-python
+python = 3.10
 pandas
 SQL
 basic streamlit 
+
+# before setting up the project kindly check if python is installed your machine with relavant version and pip is working fine.
 
 **installation and setup**
 
