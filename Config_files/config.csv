@@ -1,4 +1,6 @@
 input_path,file_format,file_name
+/Data_Extraction/source_files/mock_data.csv,csv,mock_data
+/Data_Extraction/Data_files/,csv,
 /home/razz/Rajesh/data_extraction/source_files/test_data.csv,csv,persons
 /home/razz/Rajesh/data_extraction/source_files/file_example_XLS_10.xls,excel,orders
 /home/razz/Rajesh/data_extraction/source_files/MT cars.parquet,parquet,cars

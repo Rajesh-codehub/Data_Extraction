@@ -65,3 +65,20 @@ execute the main.py file if all succedd you will redirect to the streamlit user 
 **step-5**
 
 upload the previous config file here and Done. you will get the data profiling and data extraction done.
+
+
+# docker installation
+
+**install docker desktop from docker hub**
+
+**go to download.exe in docker directary and double click*
+
+**open terminal and check docker version*
+**docker --verison** with this command
+
+create docker image 
+**docker build -t myimage .**
+
+**docker commands**
+docker run -v C:/Users/rajes/repo/repository/Data_Extraction:/Data_Extraction -p 8501:8501 data_extraction:datatag streamlit run main/main.py
+
