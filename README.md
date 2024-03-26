@@ -77,8 +77,16 @@ upload the previous config file here and Done. you will get the data profiling a
 **docker --verison** with this command
 
 create docker image 
-**docker build -t myimage .**
+**docker build -t data_extraction:datatag .**
 
-**docker commands**
+**docker command**
+
+$ docker run -v host_path:/Data_Extraction -p 8501:8501 data_extraction:datatag streamlit run 
+
+: host_path = the path where your data_extraction repo cloned from the bitbucket see the example below
+: data_extraction:datatag is a docker image we created previously.
+
+** demo command **
+
 docker run -v C:/Users/rajes/repo/repository/Data_Extraction:/Data_Extraction -p 8501:8501 data_extraction:datatag streamlit run main/main.py
 

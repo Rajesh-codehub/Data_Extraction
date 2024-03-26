@@ -1,7 +1,7 @@
 import streamlit as st
-from Data_Extraction import reading as rd
-from Data_Extraction import profiling as pg
-from Data_Extraction import writing as wt
+from Data_Ingestion import reading as rd
+from Data_Ingestion import profiling as pg
+from Data_Ingestion import writing as wt
 
 def main(config_path):
     """
@@ -35,7 +35,7 @@ if config_path is not None:
 
 
 # import sys
-# sys.path.append("/home/razz/Rajesh/data_extraction/Data_Extraction")
+# sys.path.append("/home/razz/Rajesh/Data_Ingestion/Data_Ingestion")
 
 # import reading as rd
 # import profiling as pg
