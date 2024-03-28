@@ -1,5 +1,3 @@
 input_path,file_format,file_name
-/Data_Extraction/source_files/mock_data.csv,csv,mock_data
-/Data_Extraction/source_files/orders.csv,csv,orders
+/Data_Extraction/source_files/test_data.csv,csv,persons
 /Data_Extraction/Data_files/,csv,
-
