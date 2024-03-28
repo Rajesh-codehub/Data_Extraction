@@ -28,18 +28,7 @@ def data_profiling(df: pd.DataFrame, file_name: str) -> pd.DataFrame:
         print(f"An error occurred during data profiling: {str(e)}")
         return pd.DataFrame()
 
-# def data_profiling(df,file_name):
 
-#     row_count_series = row_count(df)
-#     parameters_series = get_column_series(df,file_name)
-#     data_type_series = get_data_types(df)
-#     null_count_series = null_count(df)
-#     duplicate_count_series = duplicate_count(df)
-
-#     df = pd.concat([parameters_series, row_count_series, data_type_series, null_count_series, duplicate_count_series],axis=1)
-#     df.set_index(parameters_series.name, inplace=True)
-
-#     return df
     
 
 def row_count(df):
@@ -58,15 +47,6 @@ def row_count(df):
         row_count_by_columns.append(count)
     series = pd.Series(row_count_by_columns, index=df.columns, name='row_count')
     return series
-
-# def row_count(df):
-#     columns = df.columns.tolist()
-#     row_count_by_columns = []
-#     for column in columns:
-#         count = df[column].count()
-#         row_count_by_columns.append(count)
-#     series= pd.Series(row_count_by_columns,index = columns, name = 'row_count')
-#     return series
 
 
 def get_column_series(dataframe, file_name):
@@ -96,11 +76,7 @@ def get_column_series(dataframe, file_name):
     
     return column_series
 
-# def parameters(df,file_name):
-#     columns = df.columns.tolist()
-#     column_name = f"Columns_{len(columns)}"
-#     series = pd.Series(columns, index=columns, name = column_name)
-#     return series
+
 
 def get_data_types(df):
     """
@@ -137,11 +113,6 @@ def null_count(df):
     return null_count_.rename('null_count')
 
 
-# def null_count(df):
-
-#     null_count_ = df.isnull().sum()
-#     series = pd.Series(null_count_, name = 'null_count')
-#     return series
 
 def duplicate_count(df):
     """
@@ -169,10 +140,3 @@ def duplicate_count(df):
 
     return series
 
-# def duplicate_count(df):
-
-#     duplicate_count_ = df.apply(lambda x: x.duplicated().sum())
-
-#     series = pd.Series(duplicate_count_, name = "duplicate_count")
-
-#     return series

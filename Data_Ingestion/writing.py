@@ -31,9 +31,3 @@ def write_to_csv(input_path, df, file_name):
     except IOError as e:
         print(f"Error writing DataFrame to CSV file: {e}")
         raise
-
-# def write_to_csv(input_path,df,file_name):
-
-#     input_final_path = f"{input_path}/{file_name}.csv"
-
-#     df.to_csv(input_final_path,header=True,index=False)

@@ -36,19 +36,6 @@ def read_data_from_file(file_format, file_path):
     
     return df
 
-# def read_data_from_file(file_format,input_path):
-#     if file_format == "csv":
-#         df = read_from_csv_file(input_path)
-#     elif file_format == 'excel':
-#         df = read_from_excel_file(input_path)
-#     elif file_format == "parquet":
-#         df = read_from_parquet_file(input_path)
-#     elif file_format == 'mysql':
-#         df = read_from_mysql_db(input_path)
-#     elif file_format == "postgres":
-#         df = read_from_postgres_db(input_path)
-    
-#     return df
 
 
 
@@ -83,18 +70,7 @@ def read_from_csv_file(input_path):
     
 
 
-# def read_from_json_file(input_path):
-#     try:
-#         with open(input_path, 'r') as file:
-#             data = json.load(file)
-#         df = pd.DataFrame(data)
-#         return df
-#     except FileNotFoundError:
-#         print(f"Error: File '{input_path}' not found.")
-#         return None
-#     except IOError as e:
-#         print(f"Error: reading file '{input_path}' : {e}")
-#         return None
+
     
 def read_from_json_file(input_path):
     """
@@ -230,31 +206,7 @@ def read_from_mysql_db(input_path):
         print(f"Error: {e}")
 
     
-# def read_from_mysql_db(input_path):
-#     with open(input_path,'r') as jsondata:
-#         creds = json.load(jsondata)
-#         try:
-#             connection = mysql.connector.connect(
-#             host=creds['host'],
-#             user=creds['user'],
-#             password=creds['password'],
-#             database=creds['database']
-#             )
-#             print("Connected to MySQL successfully!")
-#             if connection:
-#                 cursor = connection.cursor()
-#                 table_name = creds['table_name']
-#                 query = f"SELECT * FROM {table_name}"
-#                 cursor.execute(query)
-#                 result = cursor.fetchall()
-#                 column_names = [desc[0] for desc in cursor.description]
-                
-#                 df = pd.DataFrame(result, columns=column_names)
-#                 cursor.close()
-#                 connection.close()
-#                 return df
-#         except Exception as e:
-#             print(f"Error: {e}")
+
 
 
 def read_from_postgres_db(input_path):
@@ -285,22 +237,4 @@ def read_from_postgres_db(input_path):
         print(f"An error occurred: {e}")
 
     return None
-
-# def read_from_postgres_db(input_path):
-#     with open(input_path,'r') as jsondata:
-#         creds = json.load(jsondata)
-#         try:
-#             connection = psycopg2.connect(
-#             host=creds['host'],
-#             user=creds['user'],
-#             password=creds['password'],
-#             database=creds['database']
-#             )
-#             print("Connected to MySQL successfully!")
-#             if connection:
-#                 table_name = creds['table_name']
-#                 df = pd.read_sql(f"SELECT * FROM {table_name}",con=connection)
-#                 return df
-#         except Exception as e:
-#             print(f"Error: {e}")
 

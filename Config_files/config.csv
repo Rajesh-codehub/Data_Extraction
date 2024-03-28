@@ -1,3 +1,5 @@
 input_path,file_format,file_name
-/Data_Extraction/source_files/test_data.csv,csv,persons
+/Data_Extraction/source_files/mtcars.json,json,mtcars
+/Data_Extraction/source_files/mock_data.csv,csv,mock_data
 /Data_Extraction/Data_files/,csv,
+
